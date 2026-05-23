@@ -85,7 +85,7 @@ public class CategoryDAO {
     }
 
     public boolean deleteCategory(int id) {
-        String query = "UPDATE categories SET is_active = false WHERE id = ?";
+        String query = "DELETE FROM categories WHERE id = ?";
         try (Connection con = DBConnection.getConnection();
              PreparedStatement pst = con.prepareStatement(query)) {
 
